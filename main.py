@@ -115,12 +115,25 @@ def combine( mds , pdfs ):
     z = zip( mds, pdfs )
     return map( lambda x : combine_single( x[0], x[1] ) , z )
 
-def main():
-    pdfs = filterByExtension( getFilesInDir( "./files" ), "pdf")
-    pdfs = map ( lambda x : "./files/"+x , pdfs )
+def intersperse( l , extra ):
+    ret = []
+    for i in l:
+        ret.append( i )
+        ret.append( extra )
+
+    ret = ret[:-1]
+    return ret
+
+def do_dir( path ):
+    pdfs = filterByExtension( getFilesInDir( path ), "pdf")
+    pdfs = map ( lambda x : os.path.join( path , x ) , pdfs )
     mds = addExtensions( removeExtensions( pdfs ) , "md" )
 
-    out =  concat( combine ( mds , pdfs ) )
+    return concat( intersperse( combine( mds , pdfs ), "<hr>" ) )
+
+
+def main():
+    out =  do_dir( "./files" )
 
     l = []
     with file( "index.html", "rb") as f:
