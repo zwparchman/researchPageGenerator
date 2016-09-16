@@ -1,0 +1,6 @@
+#define PAGESIZE 4096
+#define OFFSET 100
+#define POINTERSIZE 8
+#define LONGSIZE 8
+#define MAXFILES 1024
+#define MAXPAGES 1

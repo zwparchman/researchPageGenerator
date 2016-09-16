@@ -1,0 +1,263 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+10	fmain.f	/^10    CONTINUE$/;"	l	program:MAIN	file:
+BOOL	structs.h	/^typedef enum {FALSE, TRUE} BOOL;$/;"	t	typeref:enum:__anon1
+BUFSIZE	coalesce.c	10;"	d	file:
+CC	makefile	/^CC = gcc$/;"	m
+CFLAGS	makefile	/^CFLAGS=-g --std=c89 "-Dcaddr_t void*"$/;"	m
+CHECK	checkpoint.c	10;"	d	file:
+CHUNK_SIZE	jmalloc.c	48;"	d	file:
+CKPTFLAGS	structs.h	/^} CKPTFLAGS;$/;"	t	typeref:struct:__anon3
+CKPTGLOBALS	structs.h	/^} CKPTGLOBALS;$/;"	t	typeref:struct:__anon5
+CKPT_ALLOW	libckpt.h	38;"	d
+CKPT_DEAD	checkpoint.h	7;"	d
+CKPT_DELAY	libckpt.h	40;"	d
+CKPT_DISALLOW	libckpt.h	39;"	d
+CKPT_MUTEX_GET	libckpt.h	42;"	d
+CKPT_MUTEX_REL	libckpt.h	44;"	d
+CKPT_RDONLY	checkpoint.h	8;"	d
+CLIST	coalesce.c	/^} * CLIST;$/;"	t	typeref:struct:clist	file:
+CLIST_NODE	coalesce.c	/^} *CLIST_NODE;$/;"	t	typeref:struct:clist_node	file:
+CLOSE	libckpt.h	50;"	d
+COPYRIGHT_H	copyright.h	2;"	d
+DATASTART	coalesce.c	/^caddr_t DATASTART=0;$/;"	v
+DATASTART	structs.h	/^  caddr_t DATASTART;$/;"	m	struct:__anon2
+DEBUG	coalesce.c	/^int DEBUG;$/;"	v
+DEBUG	setup.c	/^int DEBUG=0;$/;"	v
+DLIST_H	dlist.h	2;"	d
+Dlist	dlist.h	/^} *Dlist;$/;"	t	typeref:struct:dlist
+ENOCKPT	checkpoint.h	4;"	d
+ERROR	testprog.c	/^int ERROR = 1;$/;"	v
+ETOOSOON	checkpoint.h	5;"	d
+F77	makefile	/^F77 = f77$/;"	m
+FALSE	structs.h	/^typedef enum {FALSE, TRUE} BOOL;$/;"	e	enum:__anon1
+FILEAREA	coalesce.c	/^caddr_t FILEAREA=0;$/;"	v
+FILEAREA	structs.h	/^  caddr_t FILEAREA;$/;"	m	struct:__anon2
+FILEAREASIZE	structs.h	/^  unsigned long FILEAREASIZE;$/;"	m	struct:__anon2
+FILETABLEENTRY	structs.h	/^} FILETABLEENTRY;$/;"	t	typeref:struct:__anon4
+HDRS	makefile	/^HDRS = libckpt.h structs.h externs.h dlist.h local.h$/;"	m
+HEAPEND	structs.h	/^  caddr_t HEAPEND;$/;"	m	struct:__anon2
+JMSZ	jmalloc.c	46;"	d	file:
+JNULL	jmalloc.c	50;"	d	file:
+Jmalloc	jmalloc.c	/^} *Jmalloc;$/;"	t	typeref:struct:jmalloc	file:
+LONGSIZE	local.h	4;"	d
+MAIN	fmain.f	/^      PROGRAM MAIN$/;"	p
+MAPCHUNKSIZE	coalesce.c	/^const int MAPCHUNKSIZE = POINTERSIZE + 2*LONGSIZE;$/;"	v
+MASK	jmalloc.c	49;"	d	file:
+MAT_SIZE	mult.c	/^int MAT_SIZE;$/;"	v
+MAXFILES	local.h	5;"	d
+MAXLEN	libckpt.h	33;"	d
+MAXPAGES	local.h	6;"	d
+MAXSIZE	mult.c	8;"	d	file:
+Mlist	dlist.h	/^} *Mlist;$/;"	t	typeref:struct:mlist
+N	mult.c	7;"	d	file:
+OBJECTS	makefile	/^OBJECTS = system.o setup.o signal_handlers.o checkpoint.o \\$/;"	m
+OFFSET	local.h	2;"	d
+OPEN	libckpt.h	49;"	d
+PAGESIZE	local.h	1;"	d
+POINTERSIZE	local.h	3;"	d
+PTSZ	jmalloc.c	47;"	d	file:
+READ	libckpt.h	51;"	d
+RESOURCES	structs.h	/^} RESOURCES;$/;"	t	typeref:struct:__anon2
+STACKBOTTOM	structs.h	/^  caddr_t STACKBOTTOM;$/;"	m	struct:__anon2
+TOPSTACK	structs.h	/^  caddr_t TOPSTACK;$/;"	m	struct:__anon2
+TRUE	structs.h	/^typedef enum {FALSE, TRUE} BOOL;$/;"	e	enum:__anon1
+WRITE	libckpt.h	52;"	d
+__checkpoint_h	checkpoint.h	2;"	d
+__clubs_h	libckpt.h	2;"	d
+__externs_h	externs.h	2;"	d
+__stdio_c	system.c	7;"	d	file:
+__structs_h	structs.h	2;"	d
+_close	system.c	/^int _close(int fd)$/;"	f
+_close	testprog.c	/^int _close(int filedes)$/;"	f
+_open	system.c	/^int _open(char * filename, int attribute, int mode)$/;"	f
+_open	testprog.c	/^int _open(const char * path, int oflag, ...)$/;"	f
+addr	coalesce.c	/^  caddr_t addr;$/;"	m	struct:clist_node	file:
+addr	dlist.h	/^  char *addr;$/;"	m	struct:dlist
+alrm_handler	signal_handlers.c	/^void alrm_handler(){$/;"	f
+argv	fmain.f	/^      CHARACTER argv*/;"	v	program:MAIN
+attribute	structs.h	/^  int attribute;$/;"	m	struct:__anon4
+blink	coalesce.c	/^  struct clist_node *blink;$/;"	m	struct:clist_node	typeref:struct:clist_node::clist_node	file:
+blink	dlist.h	/^  struct dlist *blink;$/;"	m	struct:dlist	typeref:struct:dlist::dlist
+blink	jmalloc.c	/^  struct jmalloc *blink;$/;"	m	struct:jmalloc	typeref:struct:jmalloc::jmalloc	file:
+calloc	jmalloc.c	/^char *calloc(nelem, elsize)$/;"	f
+check_and_set	setup.c	/^static int check_and_set(char *field, char* value){$/;"	f	file:
+check_files	setup.c	/^static void check_files(){$/;"	f	file:
+check_flags	checkpoint.c	/^static int check_flags(){$/;"	f	file:
+check_for_recovery	setup.c	/^static void check_for_recovery(int *argc, char ** argv){$/;"	f	file:
+checkpoint	structs.h	/^  BOOL checkpoint;$/;"	m	struct:__anon3
+checkpoint_here	checkpoint.c	/^int checkpoint_here(){$/;"	f
+checkpoint_here_	checkpoint.c	/^int checkpoint_here_(){$/;"	f
+child_handler	signal_handlers.c	/^void child_handler(){$/;"	f
+ckpt_coalesce	checkpoint.c	/^void ckpt_coalesce(){$/;"	f
+ckpt_num	structs.h	/^  unsigned short ckpt_num;$/;"	m	struct:__anon5
+ckpt_recover	recover.c	/^void ckpt_recover()$/;"	f
+ckpt_recover_	recover.c	/^void ckpt_recover_(){$/;"	f
+ckpt_seek	checkpoint.c	/^static void ckpt_seek()$/;"	f	file:
+ckpt_setup	setup.c	/^void ckpt_setup(int *argc, char **argv){$/;"	f
+ckpt_setup_	setup.c	/^void ckpt_setup_(int * argc, char ** argv){$/;"	f
+ckpt_sync	checkpoint.c	/^static int ckpt_sync()$/;"	f	file:
+ckpt_target	mult.c	/^ckpt_target(argc, argv)$/;"	f
+ckptflags	setup.c	/^CKPTFLAGS ckptflags; \/*--- contains the global ckpt flags ---*\/$/;"	v
+ckptglobals	setup.c	/^CKPTGLOBALS ckptglobals; \/*--- contains the ckpt globals ---*\/$/;"	v
+ckptsbrk	system.c	/^void * ckptsbrk(int incr)$/;"	f
+cksum	jmalloc.c	65;"	d	file:
+cl_insert	coalesce.c	/^static void cl_insert(CLIST_NODE node, CLIST_NODE new_node)$/;"	f	file:
+cleanup	checkpoint.c	/^static int cleanup(int rflag){$/;"	f	file:
+clist	coalesce.c	/^typedef struct clist{$/;"	s	file:
+clist_insertchunk	coalesce.c	/^clist_insertchunk(CLIST list, caddr_t addr, int size, int file_no, off_t offset)$/;"	f	file:
+clist_node	coalesce.c	/^typedef struct clist_node{$/;"	s	file:
+close	system.c	/^int close(int fd)$/;"	f
+close	testprog.c	/^int close(int filedes)$/;"	f
+coa_transfer_chunks	coalesce.c	/^static int coa_transfer_chunks(CLIST list)$/;"	f	file:
+coa_write_chunk	coalesce.c	/^static void coa_write_chunk(char * addr, long size, int data_fd, off_t offset)$/;"	f	file:
+coalesce	include.c	/^static void coalesce(Mlist list, Dlist list_ptr)$/;"	f	file:
+config_pgfaulthandler	signal_handlers.c	/^void config_pgfaulthandler(int sig, siginfo_t * info, ucontext_t *u)$/;"	f
+configure	setup.c	/^static void configure(){$/;"	f	file:
+cs	jmalloc.c	/^  int cs;$/;"	m	struct:jmalloc	file:
+cs2	jmalloc.c	/^  int *cs2;$/;"	m	struct:jmalloc	file:
+cur	coalesce.c	/^  CLIST_NODE cur;$/;"	m	struct:clist	file:
+databuf	coalesce.c	/^char databuf[BUFSIZE];$/;"	v
+datanochars	coalesce.c	/^int datanochars, mapnochars, maptemp_fd, datatemp_fd;$/;"	v
+datatemp_fd	coalesce.c	/^int datanochars, mapnochars, maptemp_fd, datatemp_fd;$/;"	v
+debug	libckpt.h	31;"	d
+destroy_clist	coalesce.c	/^static void destroy_clist(CLIST list)$/;"	f	file:
+df_seekptr	coalesce.c	/^off_t df_seekptr=0;$/;"	v
+df_seekptr	structs.h	/^  off_t df_seekptr;$/;"	m	struct:__anon5
+dir	structs.h	/^  char dir[256];$/;"	m	struct:__anon3
+dl_delete_node	dlist.c	/^dl_delete_node(item)        \/* Deletes an arbitrary iterm *\/$/;"	f
+dl_empty	dlist.h	38;"	d
+dl_insert_a	dlist.h	30;"	d
+dl_insert_b	dlist.c	/^dl_insert_b(node)   \/* Inserts a new node before the given one *\/$/;"	f
+dl_traverse	dlist.h	36;"	d
+dlist	dlist.h	/^typedef struct dlist {$/;"	s
+do_init	jmalloc.c	71;"	d	file:
+dummy1	jmalloc.c	/^  int dummy1;$/;"	m	struct:jmalloc	file:
+dummy2	jmalloc.c	/^  int dummy2;$/;"	m	struct:jmalloc	file:
+dump_core	jmalloc.c	/^dump_core()$/;"	f
+enable	structs.h	/^  BOOL enable;$/;"	m	struct:__anon5
+enhanced_fork	structs.h	/^  BOOL enhanced_fork;$/;"	m	struct:__anon3
+env	structs.h	/^  jmp_buf env;$/;"	m	struct:__anon5
+exclude	include.c	/^int exclude(Mlist list, char * addr, unsigned long size)$/;"	f
+exclude	structs.h	/^  BOOL exclude;$/;"	m	struct:__anon3
+exclude_bytes	include.c	/^int exclude_bytes(char *addr, unsigned long size, int start_now)$/;"	f
+exclude_bytes_	include.c	/^int exclude_bytes_(char * addr, unsigned long * sizep, int * start_nowp)$/;"	f
+fd	structs.h	/^  int fd;$/;"	m	struct:__anon4
+file_delete	system.c	/^void file_delete(int fd)$/;"	f
+file_insert	system.c	/^void file_insert(char * filename, int attribute, int mode, int fd)$/;"	f
+file_no	coalesce.c	/^  int file_no;$/;"	m	struct:clist_node	file:
+filename	coalesce.c	/^char * filename;$/;"	v
+filename	structs.h	/^  char * filename;$/;"	m	struct:__anon4
+filename	structs.h	/^  char filename[256];$/;"	m	struct:__anon3
+filenum	structs.h	/^  unsigned short filenum;$/;"	m	struct:__anon5
+filetable	structs.h	/^  FILETABLEENTRY filetable[MAXFILES];$/;"	m	struct:__anon5
+findpos	coalesce.c	/^static CLIST_NODE findpos(CLIST list, caddr_t addr)$/;"	f	file:
+flink	coalesce.c	/^  struct clist_node *flink;$/;"	m	struct:clist_node	typeref:struct:clist_node::clist_node	file:
+flink	dlist.h	/^  struct dlist *flink;$/;"	m	struct:dlist	typeref:struct:dlist::dlist
+flink	jmalloc.c	/^  struct jmalloc *flink;$/;"	m	struct:jmalloc	typeref:struct:jmalloc::jmalloc	file:
+flush_buffers	coalesce.c	/^static void flush_buffers(){$/;"	f	file:
+force_dirty	setup.c	/^static void force_dirty()$/;"	f	file:
+fork	structs.h	/^  BOOL fork;$/;"	m	struct:__anon3
+free	jmalloc.c	/^free(loc)$/;"	f
+free_blocks	jmalloc.c	/^static int free_blocks = 0;$/;"	v	file:
+free_called	jmalloc.c	/^static int free_called = 0;$/;"	v	file:
+free_mem	jmalloc.c	/^static int free_mem = 0;$/;"	v	file:
+head	coalesce.c	/^  CLIST_NODE head;$/;"	m	struct:clist	file:
+i	fmain.f	/^      INTEGER no_args, i$/;"	v	program:MAIN
+inc_list	structs.h	/^  Mlist inc_list;$/;"	m	struct:__anon5
+include	include.c	/^static int include(Mlist list, char * addr, unsigned long size)$/;"	f	file:
+include_bytes	include.c	/^int include_bytes(char *addr, unsigned long size)$/;"	f
+include_bytes_	include.c	/^int include_bytes_(char *addr, unsigned long * sizep)$/;"	f
+incremental	structs.h	/^  BOOL incremental;$/;"	m	struct:__anon3
+init	jmalloc.c	/^static int init = 0;$/;"	v	file:
+inuse	structs.h	/^  BOOL inuse;$/;"	m	struct:__anon4
+isdirty	checkpoint.c	/^static int isdirty(int pn){$/;"	f	file:
+isfree	jmalloc.c	69;"	d	file:
+isnum	setup.c	/^static int isnum(char * s){$/;"	f	file:
+j_head	jmalloc.c	/^static struct jmalloc j_head;$/;"	v	typeref:struct:jmalloc	file:
+jloc	jmalloc.c	67;"	d	file:
+jmal	jmalloc.c	68;"	d	file:
+jmalloc	jmalloc.c	/^typedef struct jmalloc {$/;"	s	file:
+jmalloc_check_mem	jmalloc.c	/^jmalloc_check_mem()$/;"	f
+jmalloc_print_mem	jmalloc.c	/^jmalloc_print_mem()$/;"	f
+jmalloc_usage	jmalloc.c	/^jmalloc_usage()$/;"	f
+lang	structs.h	/^  BOOL lang;$/;"	m	struct:__anon5
+main	cmain.c	/^int main(int argc, char ** argv, char ** envp)$/;"	f
+main	coalesce.c	/^void main(int argc, char ** argv)$/;"	f
+main	configure.c	/^int main()$/;"	f
+main	dlist.h	/^  Dlist main;$/;"	m	struct:mlist
+main	testprog.c	/^main(){$/;"	f
+make_clist	coalesce.c	/^static CLIST make_clist(caddr_t stop_addr)$/;"	f	file:
+make_dl	dlist.c	/^Dlist make_dl()$/;"	f
+make_ml	dlist.c	/^Mlist make_ml()$/;"	f
+malloc	jmalloc.c	/^char *malloc(size)$/;"	f
+malloc_called	jmalloc.c	/^static int malloc_called = 0;$/;"	v	file:
+mallopt	jmalloc.c	/^int mallopt(cmd, value)$/;"	f
+mapbuf	coalesce.c	/^char mapbuf[BUFSIZE];$/;"	v
+mapnochars	coalesce.c	/^int datanochars, mapnochars, maptemp_fd, datatemp_fd;$/;"	v
+maptemp_fd	coalesce.c	/^int datanochars, mapnochars, maptemp_fd, datatemp_fd;$/;"	v
+mark_dirty	setup.c	/^void mark_dirty(caddr_t addr){$/;"	f
+max	libckpt.h	35;"	d
+maxfiles	structs.h	/^  unsigned long maxfiles;$/;"	m	struct:__anon3
+maxtime	structs.h	/^  unsigned long maxtime;$/;"	m	struct:__anon3
+memlist	jmalloc.c	/^static Jmalloc memlist;$/;"	v	file:
+min	libckpt.h	36;"	d
+mintime	structs.h	/^  unsigned long mintime;$/;"	m	struct:__anon3
+ml_add	dlist.c	/^ml_add(m, d, addr, size)$/;"	f
+ml_delete	dlist.c	/^ml_delete(m, d)$/;"	f
+ml_find	dlist.c	/^Dlist ml_find(m, addr)$/;"	f
+ml_free_list	dlist.c	/^ml_free_list(m)$/;"	f
+mlist	dlist.h	/^typedef struct mlist {$/;"	s
+mode	structs.h	/^  int mode;$/;"	m	struct:__anon4
+mult_matrix	mult.c	/^void mult_matrix(A, B)$/;"	f
+mutex	structs.h	/^  unsigned short mutex;$/;"	m	struct:__anon5
+nblocks	jmalloc.c	/^static int nblocks = 0;$/;"	v	file:
+nextfree	jmalloc.c	/^  struct jmalloc *nextfree;$/;"	m	struct:jmalloc	typeref:struct:jmalloc::jmalloc	file:
+nfree	jmalloc.c	/^static int nfree = 0;$/;"	v	file:
+no_args	fmain.f	/^      INTEGER no_args,/;"	v	program:MAIN
+offset	coalesce.c	/^  off_t offset;$/;"	m	struct:clist_node	file:
+open	system.c	/^int open(char * filename, int attribute, int mode)$/;"	f
+open	testprog.c	/^int open(const char * path, int oflag, ...)$/;"	f
+open_files	checkpoint.c	/^static void open_files()$/;"	f	file:
+page_dirty	structs.h	/^  char page_dirty[MAXPAGES];$/;"	m	struct:__anon5
+pg_faulthandler	signal_handlers.c	/^void pg_faulthandler(int sig, siginfo_t * info, ucontext_t *u)$/;"	f
+prevfree	jmalloc.c	/^  struct jmalloc *prevfree;$/;"	m	struct:jmalloc	typeref:struct:jmalloc::jmalloc	file:
+print_flags	setup.c	/^static void print_flags(){$/;"	f	file:
+ptr	dlist.h	/^  Dlist ptr;$/;"	m	struct:mlist
+ptr	setup.c	/^char * ptr;$/;"	v
+read_dotfile	setup.c	/^void read_dotfile(){$/;"	f
+read_matrix	mult.c	/^void read_matrix(A)$/;"	f
+realloc	jmalloc.c	/^char *realloc(loc, size)$/;"	f
+recover_heap	recover.c	/^void recover_heap()$/;"	f
+recover_stack	recover.c	/^void recover_stack(){$/;"	f
+restore_memory	recover.c	/^void restore_memory(caddr_t topstack){$/;"	f
+save_list	structs.h	/^  Mlist save_list;$/;"	m	struct:__anon5
+sbrkptr	structs.h	/^  caddr_t sbrkptr;$/;"	m	struct:__anon5
+seekptr	structs.h	/^  off_t seekptr;$/;"	m	struct:__anon4
+set_alarm	setup.c	/^void set_alarm(){$/;"	f
+set_defaults	setup.c	/^void set_defaults(){$/;"	f
+set_globals	setup.c	/^static void set_globals(){$/;"	f	file:
+set_incremental	setup.c	/^void set_incremental()$/;"	f
+set_used	jmalloc.c	/^char *set_used(l)$/;"	f
+size	coalesce.c	/^  unsigned long size;$/;"	m	struct:clist_node	file:
+size	dlist.h	/^  unsigned long size;$/;"	m	struct:dlist
+size	jmalloc.c	/^  int size;$/;"	m	struct:jmalloc	file:
+space	jmalloc.c	/^  char *space;$/;"	m	struct:jmalloc	file:
+start	jmalloc.c	/^static Jmalloc start;$/;"	v	file:
+stop	coalesce.c	/^  caddr_t stop;$/;"	m	struct:clist_node	file:
+stop	dlist.h	/^  char *stop;$/;"	m	struct:dlist
+sys	setup.c	/^RESOURCES sys; \/*--- contains global state of the systems resources ---*\/$/;"	v
+take_ckpt	checkpoint.c	/^static int take_ckpt(){$/;"	f	file:
+used_blocks	jmalloc.c	/^static int used_blocks = 0;$/;"	v	file:
+used_mem	jmalloc.c	/^static int used_mem = 0;$/;"	v	file:
+verbose	coalesce.c	/^BOOL verbose;$/;"	v
+verbose	structs.h	/^  BOOL verbose;$/;"	m	struct:__anon3
+wait	structs.h	/^  BOOL wait;$/;"	m	struct:__anon5
+write_chunk	checkpoint.c	/^static int write_chunk(char * addr, long size, int map_fd, int data_fd)$/;"	f	file:
+write_header	checkpoint.c	/^static int write_header(int fd)$/;"	f	file:
+write_heap	checkpoint.c	/^static int write_heap(int map_fd, int data_fd)$/;"	f	file:
+write_stack	checkpoint.c	/^static int write_stack(int map_fd, int data_fd)$/;"	f	file:

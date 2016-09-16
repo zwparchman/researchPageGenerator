@@ -1,0 +1,257 @@
+% "defs.tex"
+
+\pagestyle{empty}
+\usepackage{times}
+\usepackage{graphicx} 
+%\usepackage{latex8}
+\usepackage{subfigure,epsfig}
+\usepackage{caption}
+\usepackage{fullpage}
+
+% Force paper size (not A4)
+\ExecuteOptions{letterpaper}
+
+% So we can IF-Def our LaTeX papers too!
+\usepackage{ifpdf}
+
+% Needed for compact list (i.e., compactitemize, etc. stuff)
+\usepackage{mdwlist}
+
+% Needed for alt. compact list (i.e., compactenum, compactitem, etc.)
+% (Used in tables b/c it appears to work better than mdwlist.)
+\usepackage{paralist}
+
+%for setting indentation in lists
+\usepackage{enumitem}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+%\usepackage{algorithmic}
+\usepackage{algorithmicx}
+
+\usepackage{framed, color}
+
+\usepackage[final]{listings}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+
+\lstdefinestyle{my-c-numbered}{
+  language=C,
+  showspaces=false,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  emphstyle=\bf,
+  basicstyle=\footnotesize,
+  stringstyle=\ttfamily,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1
+}
+
+\lstdefinestyle{zlua}{
+  language=[5.2]Lua,
+  % TJN: If have problems with Lua language for listings package, comment
+  % above and uncomment the following line to use 'C' as language type.
+  %language=C,
+  showspaces=false,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  commentstyle=\rmfamily,
+  emphstyle=\bf,
+  basicstyle=\footnotesize,
+  stringstyle=\ttfamily,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1
+}
+
+\lstdefinestyle{my-bourne-numbered}{
+  language=bash,
+  showspaces=false,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  emphstyle=\bf,
+  basicstyle=\footnotesize\ttfamily\scriptsize,
+  commentstyle=\itshape\color{mygray},
+  stringstyle=\ttfamily,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1
+}
+
+\lstdefinestyle{my-docker-numbered}{
+  language=bash,
+  showspaces=false,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  emphstyle=\bf,
+  basicstyle=\footnotesize\ttfamily\scriptsize,
+  commentstyle=\itshape\color{mygray},
+  stringstyle=\ttfamily,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1
+}
+
+\lstdefinestyle{my-xml-numbered}{
+    language=XML,
+    showspaces=false,
+    numbers=left,
+    numberstyle=\tiny,
+    basicstyle=\footnotesize\ttfamily\scriptsize,
+    stringstyle=\ttfamily,
+    showstringspaces=false,
+    keywordstyle=\scriptsize,
+    emphstyle={\color{Cyan}},
+    morecomment=[s]{<!--}{-->},
+    commentstyle=\itshape\color{mygray},
+}
+
+
+%
+% PDFpages options
+%  \usepackage[<opts>]{pdfpages}
+%           final: inserts pages (default)
+%           draft: does not insert pages, prints box & the filename instead
+%   enable-survey: activates survey functionality (experimental)
+%
+% Usage:
+%   \includepdf[<key=val>]{<filename>}
+%        <key=val>: A comma seperated list of options (see package docs)
+%       <filename>: Filename of the PDF doc (no blanks!)
+%
+% See also:
+%   http://www.ctan.org/tex-archive/macros/latex/contrib/pdfpages/pdfpages.pdf
+%
+\usepackage[final]{pdfpages}
+%\usepackage[draft]{pdfpages}
+
+
+%
+% Appendix package
+%
+\usepackage{appendix}
+
+
+
+%
+%-------PDF stuff--------
+%
+% see http://ringlord.com/publications/latex-pdf-howto/
+% or [Kopka99book, p394-397]
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+	\pdffalse       % we are not running pdflatex
+\else
+	\pdfoutput=1    % we are running pdflatex
+	\pdftrue
+\fi
+\ifpdf
+% You can set the title, author etc. as needed...
+\usepackage[pdftex,
+	pdftitle={Fault Tolerance and System-level Virtualization in Large-Scale
+    Computing},
+	pdfauthor={Thomas J. Naughton, III},
+	pdfsubject={},
+	pdfpagemode={UseOutlines},  
+	bookmarks,bookmarksopen,
+	pdfstartview={FitH},
+    % TJN: To make PDF hyperlinks in paper black, comment/uncomment 'linkcolor'
+    % colorlinks,linkcolor={black},citecolor={black},
+	colorlinks,linkcolor={blue},citecolor={blue},
+	urlcolor={red},
+]{hyperref}
+\fi
+%-------PDF stuff--------
+
+
+
+%
+%-------DRAFT stuff--------
+%
+% 'Draft' watermarks
+%
+% Using options, to lighten the watermark, and only do it on select page/area
+%\usepackage[light,outline,first,bottom]{draftcopy}
+%\usepackage[light,outline,first]{draftcopy}
+%
+% TJN: pdfdraftcopy seems to work with both PS & PDF, but w/ pdflatex issues
+%\usepackage{pdfdraftcopy}
+% so I typically just include the following & ps2pdf the file.
+%\usepackage{draftcopy}
+%
+% - - - - - - - - - - - - - - - - 
+% *** Yet Another Method ***
+%
+% Look at the 'svn-multi' (aka svnkw) page from CTAN, which allows
+% for typesetting control over SVN revision information on a per-file
+% and/or whole document level.
+% See also:
+%   - The "LaTeX & Subversion" link/info in the Trac wiki for "pubs"
+%      https://bear.csm.ornl.gov/trac/pubs/
+%
+%  \usepackage{svn}
+%  \usepackage{svn-multi}
+%    ...
+%  \svnid{$Id: defs.tex 3825 2015-06-26 05:44:36Z tjn3 $}
+%    ...
+%  Paper Revision:~\svnrev \\
+%
+
+\usepackage{svn}
+%\usepackage{svn-multi}
+\usepackage{svnkw}
+
+%-------DRAFT stuff--------
+
+
+%
+% This gives the heading the funny little footnote markers...then switch to 
+% standard arabic as shown below for main body of article.  
+% Ref: [p.110-111]{Kopka99book}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+
+
+%-----------------------------------------
+% Header / Footer stuffo
+%
+% NOTE: Using the '\draftmark' macro, which must
+%       be defined prior to use of this code.
+%       This is typically done in the top-level
+%       LaTeX document that is including this 
+%       'defs.tex' file.
+
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}                             % Clear all other settings
+  \renewcommand{\headrulewidth}{0.0pt}   % get rid of the rule-line
+  \lhead{}
+  \chead{} 
+  \rhead{}
+  \lfoot{}
+  \cfoot{}
+  \lfoot{\begin{small}\emph{\draftmark}\end{small}}
+
+%-----------------------------------------
+
+
+
+%%%%
+% (TJN: Used for \xxxtodo and \xxxtodoMargin macros)
+%
+% textwidth sets width of todo items in margin
+\usepackage[colorinlistoftodos, textwidth=2.5cm, shadow]{todonotes}
+%
+% Uncomment to DISABLE all todonotes
+%\usepackage[disable, colorinlistoftodos, textwidth=2.5cm, shadow]{todonotes}
+%%%%
+

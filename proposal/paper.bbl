@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{mpi-spec}
+Message Passing Interface Fourm.
+\newblock {\em MPI : A Message-Passing Interface Standard Version 3.0},
+  September 2012.
+
+\bibitem{ulfm-site}
+Fault tolerance~working group.
+\newblock Fault tolerance research hub.
+\newblock \url{http://fault-tolerance.org/}.
+
+\end{thebibliography}

@@ -1,0 +1,117 @@
+% $Id: article.tex 139 2015-06-26 06:06:15Z tjn3 $
+
+\documentclass{article}
+
+% TJN: Must define before includes as fancyheader uses '\draftmark' macro
+\newcommand{\draftmark}{}
+
+\include{defs}
+\include{macros}
+
+
+\title{Thesis proposal}
+\author{Zachary Parchman}
+\date{}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+\section{Introduction}
+This thesis proposal focuses on the creation of an online application
+specific checkpoint restart mechanisms. 
+These mechanisms will allow an application to recover the data that belongs to 
+failed nodes so the application can continue to make progress without 
+restarting. 
+To achieve this efficiently the application will need to be able to
+perform a trade-off between the resilience of checkpoints and the cost of
+checkpoints so that both highly 
+reliable checkpoints and lower cost checkpoints can be integrated into the
+application. This will allow it to suffer process failures while continuing
+to make
+progress toward completion.
+
+\section{Background}
+\subsection{Message Passing Library}
+Message Passing Library (MPI) is a library intended for use in distrusted
+memory computing. The usual use case is for the application to
+consist of one executable that is ran on more than one machine. These
+executables use their process number, rank in MPI, to determine what actions
+to take. Communication is achieved through a rich set of message that the
+processes can send to each other. These messages are translated into
+efficient operations taking advantage varied of communication hardware so
+that the application does not have to concern itself with the underlying
+communication hardware. 
+
+While MPI contains a rich set of communication functions it contains no
+fault tolerance. By default when an error occurs the entire application,
+every process in the job, is aborted. This can be changed with an error
+handler function, but after a failure occurs the MPI library can no longer
+be used for communication, even with a user defined error handler.
+
+\subsection{ULFM}
+User Level Fault Mitigation (ULFM)\cite{ulfm-site} is proposed as the
+technology to use with MPI to make applications fault tolerant. It is a
+proposed extension to the MPI library that allows for a well written program
+to take corrective action when a process fails. ULFM does not provide any
+facilities for data checkpointing. This differs from current popular
+methods of adding fault tolerance into an MPI program in that the program
+must be written specifically to use ULFM. ULFM does not itself provide fault
+tolerance. ULFM instead provides fault detection and the ability to bring
+the MPI library back into a state where communication can take place. 
+
+While ULFM allows a program to continue to use MPI after a failure; it does
+not provide a way for an application to retrieve it's old data. There is no
+checkpointing system in ULFM. This forces the application to perform it's
+own data replication if it wants to continue making progress after a process
+failure.
+
+\section{Failure Mode Supported}
+As ULFM only supports total process failures the proposed checkpointing
+system that will be built on top of it will also only support total process
+failures. A total process failure is defined as having the failing process
+cease all communication without warning. This is assumed to be permanent for
+the life of the application.
+
+
+\section{Contribution}
+I shall design, implement, and evaluate an online application specific
+checkpoint restart mechanism intended to preserve the data from failed ranks
+in ULFM
+applications. The checkpoint system will be able to support multiple
+checkpointing strategies with differing costs in latency, bandwidth, and
+memory usage.
+The contribution of this work shall be a library to provide applications the
+ability to create runtime checkpoints that have not only variable cost, but
+also do not require restarting the application. 
+The application will be able to contain multiple independent subsets of its
+processes that can fail and recover without communication between the
+subsets during processing.  More over I will show that there is a
+efficiency driven reason to desire this over a more traditional checkpoint
+restart mechanisms. 
+
+\section{Evaluating}
+To evaluate the library I intend to use the NAS parallel benchmarks IS
+benchmark. This benchmark sorts an array of integers in distributed memory.
+Mantevo's HPCCG benchmark, a short conjugate gradient application, will also
+be used. A competing application specific checkpoint restart system will be
+chosen. Currently under consideration is libckpt.
+The evaluation will focus on checkpoint latency, the time taken to
+recover from a failure, and runtime penalty for using the checkpoint restart
+system when compared to when no resiliency is used. 
+These metrics will be determined by performing multiple runs with
+varying failure situations on a distributed memory machine.
+
+% XXX: cite everything
+\nocite{*}
+
+%-------------------------------------------------------------------------
+%   Bibliography
+%-------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{bibs/CITES}
+
+\end{document}
+
+% vim:tabstop=4:shiftwidth=4:expandtab:textwidth=76:filetype=plaintex

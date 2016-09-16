@@ -1,0 +1,146 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%
+% Setup a few helpful formatting macros
+%
+
+
+% Use urlstyle to protect for usage with functions containing underscores
+\newcommand\func{\begingroup \urlstyle{tt}\Url}
+\newcommand\variable{\begingroup \urlstyle{tt}\Url}
+\newcommand\envvar{\begingroup \urlstyle{tt}\Url}
+\newcommand\file{\begingroup \urlstyle{tt}\Url}
+
+\newcommand{\namespace}[1]{\texttt{#1}}
+
+%\newcommand{\variable}[1]{\texttt{#1}}
+% \newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\cmd}[1]{\texttt{#1}}
+\newcommand{\function}[1]{\texttt{#1}}
+\newcommand{\manpage}[2]{\texttt{#1(#2)}}
+\newcommand{\user}[1]{\texttt{#1}}
+\newcommand{\hostname}[1]{\texttt{#1}}
+
+
+ % TJN: Mirror the acronym macros with the Glossary macros
+ %      so it is earier to use in the manner I tend to use the package.
+ % This forces the "full" verison of glossary, i.e., first use string,
+ % Example: \glsfull{ft} => "fault tolerance~(FT)".
+\newcommand{\glsfull}[1]{\glsreset{#1}\gls{#1}}
+
+%-----
+% Changebar macro
+%  Usage:
+%     \changebegin{Thomas} ...my modified lines...  \changeend{}
+
+\newcommand{\changebegin}[1]{\marginpar[\hspace*{-60pt}\mbox{\hspace*{10pt} 
+ $\top$ \tiny ({#1})}]{\mbox{$\top$ \tiny ({#1})}}}
+\newcommand{\changeend}[1]{\marginpar[\hspace*{-60pt}\mbox{\hspace*{10pt} 
+ $\bot$ \tiny ({#1})}]{\mbox{$\bot$ \tiny ({#1})}}}
+%
+% To get rid of these change marks (without actually removing from text)
+%\newcommand{\changebegin}[1]{} 
+%\newcommand{\changeend}[1]{} 
+%-----
+
+
+
+%-----
+%
+% Discussion macro
+%  Usage:
+%     \beging{discuss} ...discussion/comments...  \end{discuss}
+
+\newenvironment{discuss}{\begin{small}\begin{list}{}{}\item[]{\it \underline{\textcolor{cyan}{Discussion item:}}}
+\addcontentsline{toc}{subsection}{\textcolor{cyan}{Discussion Item}}}{{\rm ({\it \textcolor{cyan}{End of discussion item.}})} \end{list}\end{small}}
+%
+%-----
+
+
+%-----
+%
+% Review Text macro -- place this around text that needs 
+%                      to be reviewed/revised. 
+%                      (Note: Not sure how macro will work across sections.)
+% Usage:
+%   \begin{reviewme}
+%     ...some text in the doc to review...
+%   \end{reviewme}
+%
+
+\newenvironment{reviewme}{\begin{paragraph}{\textcolor{magenta}{\it Review text:}}
+\addcontentsline{toc}{subsection}{\textcolor{magenta}{Review text:}}
+\changebegin{\textcolor{magenta}{ReviewME}}}
+{{\rm ({\textcolor{magenta}{\it End of review text.}})\changeend{\textcolor{magenta}{ReviewME}}}\end{paragraph}}
+%
+% Alt. version: much more compact (doesn't show Begin/End text marks).
+%
+%\newenvironment{reviewme}{\addcontentsline{toc}{subsection}{\textcolor{magenta}{Review text:}}
+%\changebegin{\textcolor{magenta}{ReviewME}}}{\changeend{\textcolor{magenta}{ReviewME}}}
+%
+%-----
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Create compact lists
+%%%%%%%%%%%%%%%%%%%%%%
+% Usage: 
+%
+%    [DEFAULT]                       [ALT-VERSION]
+%   \begin{itemize*}               \begin{compactitemize}
+%      \item xxx       -OR-           \item xxx
+%   \end{itemize*}                 \end{compactitemize}
+%
+% Add alternate version with more descriptive LaTeX keywords,
+% the package provides the "...*" (star) version by default.
+\makecompactlist{compactenumerate}{enumerate}
+\makecompactlist{compactitemize}{itemize}
+\makecompactlist{compactdescription}{description}
+
+
+%-----
+%
+% Attention/Notice macro
+%  Usage:
+%     \beging{AttentionNote} ...note/comments...  \end{AttentionNote}
+%
+\newenvironment{AttentionNote}{\begin{quote}\begin{list}{}{}\item[] 
+    \hfil\rule{0.8\textwidth}{.4pt}\hfil \\
+    {\bf Notice:\\}}{{
+    \\ \hfil\rule{0.8\textwidth}{.4pt}\hfil \\
+    } \end{list}\end{quote}}
+%
+%-----
+
+%-----
+%
+% ToDo macro
+%   Usage:
+%      \xxxtodo{INITIALS}{Todo text here}
+%      \xxxtodoMargin{INITIALS}{Todo text for margin here}
+%
+%   Example
+%      \xxxtodo{TJN}{This would be a good example for todo.}
+%      \xxxtodoMargin{TJN}{And something in the margin}
+%
+%   Descr:
+%      Places a numbered 'todo' with the given initials and text into
+%      the document with a MS-Word style yellow comment box.
+%      The "Margin" version, simply puts the todo box in the margin,
+%      which can be helpful for general comments to a section/paragraph.
+%      
+%%
+\newcounter{todocounter}
+\newcommand{\todonum}[2][]
+{\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}
+%
+% ToDo comments
+\newcommand{\xxxtodo}[2]{\todonum[color=yellow!30,inline,size=\footnotesize,caption=Comment~\thetodocounter]{#1: #2}}
+\newcommand{\xxxtodoMargin}[2]{\todonum[color=yellow!30,size=\scriptsize,noline,caption=MarginComment~\thetodocounter]{#1: #2}}
+%
+%-----
+
+

@@ -1,0 +1,17 @@
+getLocation: function (ID) {
+    var result = null;
+    $.ajax({
+        url: '/List/GetLocationNames',
+        type: 'POST',
+        asynch: false,
+        data: { ID: ID },
+        beforeSend: function () { },
+        success: function (data) {
+            if (data != null) {
+                result = data;
+            }
+        },
+    });
+
+    return result;
+},
